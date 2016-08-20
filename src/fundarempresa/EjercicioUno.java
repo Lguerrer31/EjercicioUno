@@ -5,6 +5,8 @@
  */
 package fundarempresa;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author coste
@@ -133,6 +135,11 @@ public class EjercicioUno extends javax.swing.JFrame {
 
         cmdBorrar.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel5.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         cmdResolver.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -201,27 +208,41 @@ public class EjercicioUno extends javax.swing.JFrame {
         // TODO add your handling code here:
         String total, inv1, inv2, inv3;
         double por1, por2, por3, suma, in1, in2, in3;
-        
+
+        txtTotal.setText("");
+
         in1 = Double.parseDouble(txtInv1.getText());
         in2 = Double.parseDouble(txtInv2.getText());
         in3 = Double.parseDouble(txtInv3.getText());
-        
-        suma = in1 + in2 + in3;
-        
-        por1 = (suma * in1) / 100;
-        por2 = (suma * in2) / 100;
-        por3 = (suma * in3) / 100;
-        
-        total = String.valueOf(suma);
-        txtTotal.setText(total);
-        
-        inv1 = String.valueOf(por1);
-        txtInv1.setText(inv1);
-        inv2 = String.valueOf(por2);
-        txtInv2.setText(inv2);
-        inv3 = String.valueOf(por3);
-        txtInv3.setText(inv3);
+
+            suma = in1 + in2 + in3;
+
+            por1 = (suma * in1) / 100;
+            por2 = (suma * in2) / 100;
+            por3 = (suma * in3) / 100;
+
+            total = String.valueOf(suma);
+            txtTotal.setText(total);
+
+            inv1 = String.valueOf(por1);
+            lblPOr1.setText(inv1);
+            inv2 = String.valueOf(por2);
+            lblPor2.setText(inv2);
+            inv3 = String.valueOf(por3);
+            lblPor3.setText(inv3);  
     }//GEN-LAST:event_cmdResolverActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        // TODO add your handling code here:
+        txtInv1.setText("");
+        txtInv2.setText("");
+        txtInv3.setText("");
+        txtTotal.setText("");
+        lblPOr1.setText("");
+        lblPor2.setText("");
+        lblPor3.setText("");
+        txtInv1.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
