@@ -56,6 +56,11 @@ public class EjercicioUno extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtInv3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtInv3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInv3KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtInv3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 60, -1));
 
         txtInv2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -64,9 +69,19 @@ public class EjercicioUno extends javax.swing.JFrame {
                 txtInv2ActionPerformed(evt);
             }
         });
+        txtInv2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInv2KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtInv2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 60, -1));
 
         txtInv1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtInv1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInv1KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtInv1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 60, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -143,6 +158,39 @@ public class EjercicioUno extends javax.swing.JFrame {
     private void txtInv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInv2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInv2ActionPerformed
+
+    private void txtInv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInv1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtInv1KeyTyped
+
+    private void txtInv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInv2KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtInv2KeyTyped
+
+    private void txtInv3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInv3KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtInv3KeyTyped
 
     /**
      * @param args the command line arguments
