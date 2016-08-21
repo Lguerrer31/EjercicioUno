@@ -105,17 +105,17 @@ public class EjercicioUno extends javax.swing.JFrame {
 
         lblPor3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblPor3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(lblPor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 60, 20));
+        jPanel3.add(lblPor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 40, 20));
 
         lblPor2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblPor2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(lblPor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 60, 20));
+        jPanel3.add(lblPor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 40, 20));
 
         lblPOr1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblPOr1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(lblPOr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 27, 60, 20));
+        jPanel3.add(lblPOr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 27, 40, 20));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 140, 120));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 130, 120));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inversión total", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -210,7 +210,24 @@ public class EjercicioUno extends javax.swing.JFrame {
         double por1, por2, por3, suma, in1, in2, in3;
 
         txtTotal.setText("");
+        
+        if (txtInv1.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del numero 1", "Error", JOptionPane.ERROR_MESSAGE);
+            txtInv1.requestFocusInWindow();
+        }
+        
+        else if (txtInv2.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del número 2", "Error", JOptionPane.ERROR_MESSAGE);
+            txtInv2.requestFocusInWindow();
+        }
+        
+        else if (txtInv3.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del número 3", "Error", JOptionPane.ERROR_MESSAGE);
+            txtInv3.requestFocusInWindow();
+        }
 
+        else {
+        
         in1 = Double.parseDouble(txtInv1.getText());
         in2 = Double.parseDouble(txtInv2.getText());
         in3 = Double.parseDouble(txtInv3.getText());
@@ -230,6 +247,7 @@ public class EjercicioUno extends javax.swing.JFrame {
             lblPor2.setText(inv2);
             inv3 = String.valueOf(por3);
             lblPor3.setText(inv3);  
+        }
     }//GEN-LAST:event_cmdResolverActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
