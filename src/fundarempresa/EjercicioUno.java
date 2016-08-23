@@ -210,43 +210,49 @@ public class EjercicioUno extends javax.swing.JFrame {
         double por1, por2, por3, suma, in1, in2, in3;
 
         txtTotal.setText("");
-        
-        if (txtInv1.getText().trim().isEmpty()){
+
+        if (txtInv1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del numero 1", "Error", JOptionPane.ERROR_MESSAGE);
             txtInv1.requestFocusInWindow();
-        }
-        
-        else if (txtInv2.getText().trim().isEmpty()){
+        } else if (txtInv2.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del número 2", "Error", JOptionPane.ERROR_MESSAGE);
             txtInv2.requestFocusInWindow();
-        }
-        
-        else if (txtInv3.getText().trim().isEmpty()){
+        } else if (txtInv3.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Digite la cantidad invertida del número 3", "Error", JOptionPane.ERROR_MESSAGE);
             txtInv3.requestFocusInWindow();
-        }
+        } else {
 
-        else {
-        
-        in1 = Double.parseDouble(txtInv1.getText());
-        in2 = Double.parseDouble(txtInv2.getText());
-        in3 = Double.parseDouble(txtInv3.getText());
+            in1 = Double.parseDouble(txtInv1.getText());
+            in2 = Double.parseDouble(txtInv2.getText());
+            in3 = Double.parseDouble(txtInv3.getText());
 
-            suma = in1 + in2 + in3;
+            if (in1 == 0) {
+                JOptionPane.showMessageDialog(this, "No se puede colocar 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtInv1.requestFocusInWindow();
+            } else if (in2 == 0) {
+                JOptionPane.showMessageDialog(this, "No se puede colocar 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtInv2.requestFocusInWindow();
+            } else if (in3 == 0) {
+                JOptionPane.showMessageDialog(this, "No se puede colocar 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtInv3.requestFocusInWindow();
+            } else {
 
-            por1 = (suma * in1) / 100;
-            por2 = (suma * in2) / 100;
-            por3 = (suma * in3) / 100;
+                suma = in1 + in2 + in3;
 
-            total = String.valueOf(suma);
-            txtTotal.setText(total);
+                por1 = (suma * in1) / 100;
+                por2 = (suma * in2) / 100;
+                por3 = (suma * in3) / 100;
 
-            inv1 = String.valueOf(por1);
-            lblPOr1.setText(inv1);
-            inv2 = String.valueOf(por2);
-            lblPor2.setText(inv2);
-            inv3 = String.valueOf(por3);
-            lblPor3.setText(inv3);  
+                total = String.valueOf(suma);
+                txtTotal.setText(total);
+
+                inv1 = String.valueOf(por1);
+                lblPOr1.setText(inv1);
+                inv2 = String.valueOf(por2);
+                lblPor2.setText(inv2);
+                inv3 = String.valueOf(por3);
+                lblPor3.setText(inv3);
+            }
         }
     }//GEN-LAST:event_cmdResolverActionPerformed
 
